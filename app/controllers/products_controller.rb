@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  require_relative "../../lib/utils"
 
   # GET /products
   # GET /products.json
@@ -65,6 +66,7 @@ class ProductsController < ApplicationController
   end
 
   def scrape
+    Utils.scrape
     redirect_to "/", notice: "Scraping done"
   end
 
